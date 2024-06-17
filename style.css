@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Style the header */
+header {
+  /* padding: 1rem 3rem; */
+  text-align: center;
+  /* font-size: 35px; */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/concept-of-hero.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-box {
+  height: 300px;
+}
+
+/* Progress bar */
+.progress-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin-bottom: 30px;
+  z-index: 99;
+}
+
+.progress-bar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
+}
+
+.progress {
+  background-color: #028596;
+  width: 0;
+  transition: .5s;
+}
+
+.progress-step {
+padding: 1rem 3rem;
+border-radius: 2rem;
+position: relative;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.20rem);
+  font-size: 0.85rem;
+  color: black !important;
+}
+
+.progress-step.active {
+  background-color: #028596;
+  color: white;
+}
+
+@keyframes animate {
+  from {
+      transform: scale(1, 0);
+      opacity: 0;
+  }
+
+  to {
+      transform: scale(1, 1);
+      opacity: 1;
+  }
+}
+/* End Progress bar */
+
+.content {
+  background-color: #535353;
+  /* border: 1px solid red; */
+  padding: 1rem 15rem;
+}
+
+#content-box {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  padding: 1rem 3rem;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+footer p {
+  margin: 0; /* Remove default margin */
+}
+
+header nav ul,
+footer nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li,
+footer nav ul li {
+  margin: 0 10px;
+}
+
+header nav ul li a,
+footer nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 1rem 3rem;
+  }
+  
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

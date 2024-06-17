@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h2>Markl</h2>
+  </div>
+  <div class="lang-nav">
+    <nav>
+      <ul>
+        <li><a href="#">NL</a></li>
+        <li><a href="#">FR</a></li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-image">
+  <div class="hero-box">
+  </div>
+</section>
+
+<h1>Register</h1>
+
+
+
+<section class="content">
+  <div class="progress-bar">
+  <div class="progress" id="progress"></div>
+  <button class="progress-step active" data-title="Personal"></button>
+  <button class="progress-step" data-title="Contact"></button>
+  <button class="progress-step" data-title="Experiences"></button>
+</div>
+  <div id="content-box">
+    <div id="title">Title</div>
+    <div id="content">Content</div>
+    <div id="cta">
+      <button id="subscribe-newsletter" style="display: none;">Subscribe to the newsletter</button>
+    </div>  
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Subscribe to the Newsletter</h2>
+    <form id="subscribe-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>Company &copy; <span id="year"></span> All Rights Reserved.</p>
+  <nav>
+    <ul>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
